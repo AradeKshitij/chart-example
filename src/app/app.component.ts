@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Chart } from 'chart.js'
+declare var Chart: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   data: any;
   labels: string[];
@@ -34,7 +35,7 @@ export class AppComponent implements OnInit {
           label: "Successful requests",
           fill: false,
           lineTension: 0.1,
-          backgroundColor: "rgba(70, 129, 152, 0.61)",
+          backgroundColor: "#006699",
           borderColor: "#006699",
           borderCapStyle: 'butt',
           borderDash: [],
@@ -56,7 +57,7 @@ export class AppComponent implements OnInit {
           label: "Failed requests",
           fill: false,
           lineTension: 0.1,
-          backgroundColor: "rgba(224, 55, 55, 0.51)",
+          backgroundColor: "#fb6206",
           borderColor: "red",
           borderCapStyle: 'butt',
           borderDash: [],
