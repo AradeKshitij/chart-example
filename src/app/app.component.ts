@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartTypes } from './chart-types.enum';
+
 declare var Chart: any;
 
 @Component({
@@ -10,6 +12,8 @@ declare var Chart: any;
 export class AppComponent implements OnInit {
   data: any;
   labels: string[];
+  type:any = ChartTypes.BAR_CHART
+  
   constructor() {
 
   }
