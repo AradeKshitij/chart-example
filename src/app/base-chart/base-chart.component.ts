@@ -18,6 +18,8 @@ export class BaseChartComponent implements OnInit {
   ngOnInit() {
     if(this.chartType == ChartTypes.BAR_CHART) {
       console.log('Show bar');
+    } else if(this.chartType == ChartTypes.LINE_CHART) {
+      console.log('Show line');
     }
   }
 

@@ -12,10 +12,9 @@ declare var Chart: any;
 export class AppComponent implements OnInit {
   data: any;
   labels: string[];
-  type:any = ChartTypes.BAR_CHART
-  
-  constructor() {
+  type: any = ChartTypes.LINE_CHART;
 
+  constructor() {
   }
 
   ngOnInit() {
@@ -87,8 +86,38 @@ export class AppComponent implements OnInit {
     }
 
     let lineChart = new Chart(CANVAS, {
-      type: 'bar',
-      data: this.data
+      type: 'line',
+      data: this.data,
+      options: {
+        scales: {
+          xAxes: [{
+            ticks: {
+              beginAtZero: true,
+              fontFamily: "'Open Sans Bold', sans-serif",
+              fontSize: 11
+            },
+            scaleLabel: {
+              display: false
+            },
+            gridLines: {
+            },
+            stacked: true
+          }],
+          yAxes: [{
+            gridLines: {
+              display: false,
+              color: "#fff",
+              zeroLineColor: "#fff",
+              zeroLineWidth: 0
+            },
+            ticks: {
+              fontFamily: "'Open Sans Bold', sans-serif",
+              fontSize: 11
+            },
+            stacked: true
+          }]
+        }
+      }
     });
   }
 }
